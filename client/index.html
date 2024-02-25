@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN Blog</title>
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden; /* Hide horizontal scrollbar */
+      }
+
+      .content {
+          position: relative;
+          overflow-y: auto; /* Enable vertical scrolling */
+      }
+
+      .chatbot-image {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          /* Add your chatbot image URL */
+          background-image: url('path_to_chatbot_image');
+          background-size: cover;
+          z-index: 9999;
+      }
+
+      .mic-button {
+          position: fixed;
+          bottom: 20px;
+          left: 20px; /* Adjusted to the left side */
+          cursor: pointer;
+          z-index: 9999;
+          /* Flip the mic button horizontally */
+          transform: scaleX(-1);
+      }
+
+      .mic-button img {
+        border-radius: 50%;
+          width: 50px;
+          height: 50px;
+      }
+      .mic-button:hover {
+          transform: scale(1.1);
+          cursor:-moz-grab;
+      }
+  </style>
+  </head>
+  <body>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/704e08a1-7808-42d4-912d-5292260ff011/webchat/config.js" defer></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <div class="content">
+      <!-- Content of your website goes here -->
+  </div>
+
+  <div class="mic-button">
+      <label for="micButton">
+          <img src="https://play-lh.googleusercontent.com/TPfMF74TYbuuPP7Usp-3A8B-mdB1ovgFeGqwXKtN1c4HKcfhljlC40tJCjSmFdN1I6k" alt="Microphone">
+      </label>
+  </div>
+
+  <div class="chatbot-image"></div>
+
+  <script>
+      const micButton = document.querySelector('.mic-button');
+      const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+      recognition.lang = 'en-US';
+      let isListening = false;
+
+      micButton.addEventListener('click', () => {
+          if (!isListening) {
+              recognition.start();
+              isListening = true;
+          } else {
+              recognition.stop();
+              isListening = false;
+          }
+      });
+
+      recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript.toLowerCase();
+          console.log('Transcript:', transcript);
+
+          // Perform action based on voice command
+          if (transcript.includes('open home')) {
+              window.location.href = '/';
+          } else if (transcript.includes('open scholarship')) {
+              window.location.href = '/schemelist';
+          } else if (transcript.includes('open SignUp')) {
+              window.location.href = '/sign-up';
+            
+           } else if (transcript.includes('open job opportunities')) {
+              window.location.href = '/job';
+          } else if (transcript.includes('open SignIn')) {
+              window.location.href = '/sign-in';
+
+          } else if (transcript.includes('scroll up')) {
+              window.scrollBy(0, -window.innerHeight / 2); // Scroll up by half of the window height
+          } else if (transcript.includes('scroll down')) {
+              window.scrollBy(0, window.innerHeight / 2); // Scroll down by half of the window height
+          }
+      };
+
+      recognition.onend = () => {
+          console.log('Speech recognition ended.');
+          if (isListening) {
+              recognition.start();
+          }
+      };
+  </script>
+</body>
+</html>
