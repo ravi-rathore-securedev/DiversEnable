@@ -58,7 +58,6 @@ export default function SignUp() {
           <img  className='h-80 w-60 border-purple-400 rounded-lg  mt-3 pb-1 m-auto' src='https://images.pexels.com/photos/8127978/pexels-photo-8127978.jpeg?auto=compress&cs=tinysrgb&w=600' alt='logo' />
           </p>
         </div>
-        {/* right */}
 
         <div className='flex-1'>
         

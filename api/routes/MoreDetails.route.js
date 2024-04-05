@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/createMoreDetail", createMoreDetail);
 router.get("/getAllMoreDetail", getAllMoreDetails);
 router.get("/getMoreDetailById/:userId", getMoreDetailById);
-router.put("/updateMoreDetail/:userid", updateMoreDetail);
+router.put("/updateMoreDetail/:userId", updateMoreDetail);
 router.delete("/deleteMoreDetail/:userId", deleteMoreDetail);
 
 export default router;

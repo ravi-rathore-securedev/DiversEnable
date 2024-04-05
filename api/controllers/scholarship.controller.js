@@ -42,28 +42,3 @@ export const getScholarById = async (req, res) => {
 
 
 
-
-
-
-// Delete a job
-// export const deleteJob = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     await Job.findByIdAndDelete(id);
-//     res.status(200).json({ message: 'Job deleted successfully' });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// Update a job
-// export const updateJob = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const { title, description } = req.body;
-//     const updatedJob = await Job.findByIdAndUpdate(id, { title, description }, { new: true });
-//     res.status(200).json(updatedJob);
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };

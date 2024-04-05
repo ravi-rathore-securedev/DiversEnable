@@ -58,8 +58,8 @@ export default function App() {
         <Route path='/scholar/:scholarId' element={<ScholarId />} />
 
         <Route path='/moredetails' element={<MoreDetails />} />
-        <Route path='/moredetails/updatedetails/:userId' element={<UpdateDetails />} />
-        <Route path='/dashboard/viewdetails/:userId' element={<ViewDetails />} />
+        <Route path='/viewdetails/:userId' element={<ViewDetails />} />
+     <Route path='/viewdetails/:userId/updateDetails/:userId' element={<UpdateDetails />} />
 
         <Route path='/addjob' element={<AddJob />} />
         <Route path='/addscheme' element={<AddScheme />} />

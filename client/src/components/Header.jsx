@@ -58,7 +58,7 @@ export default function Header() {
         <span className=' py-1 rounded-lg px-1'>
       <img src={Headlogo} alt='logo' className='sm:block hidden w-12 h-12 rounded-full ' />
         </span>
-        <h2 className='py-3 text-2xl text-indigo-500 font-bold'>
+        <h2 className='py-3 text-base te sm:text-2xl text-indigo-500 font-bold'>
   Diverse Enable
 </h2>
       </Link>
@@ -115,23 +115,23 @@ export default function Header() {
       </div>
       <Navbar.Collapse >
         <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to='/' className=' text-xl'>Home</Link>
+          <Link to='/' className=' text-xl text-white hover:text-cyan-200'>Home</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/about'} as={'div'}>
-          <Link to='/about' className=' text-xl'>About</Link>
+          <Link to='/about' className=' text-xl text-white hover:text-cyan-200'>About</Link>
         </Navbar.Link>
         {/* <Navbar.Link active={path === '/projects'} as={'div'}>
           <Link to='/projects'>Projects</Link>
         </Navbar.Link> */}
         <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to='/search' className=' text-xl'>Explore</Link>
+          <Link to='/search' className=' text-xl text-white hover:text-cyan-200'>Explore</Link>
         </Navbar.Link>
         <div className='text-xl'>
         <Dropdown
           arrowIcon={false}
           label='Opportunity'
           inline
-          className='hidden sm:inline w-44 p-3'
+          className='sm:inline w-44 p-3 text-white hover:text-cyan-200'
         >
           <Link to='/joblist'>
             <Dropdown.Item>Job/Internships</Dropdown.Item>

@@ -28,7 +28,7 @@ export default function DashUsers() {
     if (currentUser.isAdmin) {
       fetchUsers();
     }
-  }, [currentUser._id]);
+  });
 
   const handleShowMore = async () => {
     const startIndex = users.length;

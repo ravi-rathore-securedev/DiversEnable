@@ -12,9 +12,7 @@ const moreDetailsSchema = new mongoose.Schema({
         required:true
     },
     userId: {
-        type: String,
-        // required: true,
-        // unique: true
+        type: String
       },
     DateOfBirth:{
         type: Date,

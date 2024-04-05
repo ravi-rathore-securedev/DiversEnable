@@ -1,11 +1,11 @@
 import { Button, Select, TextInput, Textarea } from 'flowbite-react';
-import { set } from 'mongoose';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
 export const MoreDetails = () => {
+    const [successMessage, setSuccessMessage] = useState('');
     const [formData, setFormData] = useState({});
     const [newformData, setNewFormData] = useState({});
     const { currentUser } = useSelector((state) => state.user);
@@ -38,15 +38,21 @@ export const MoreDetails = () => {
             const data = await response.json();
             console.log(data);
             console.log("data added successfully");
+            setSuccessMessage('Details have been added successfully');
         } catch (error) {
             console.error('Error:', error.message);
+            setSuccessMessage('Something went wrong');
         }
     };
 
     return (
         <div className="max-w-lg mx-auto p-4">
             <h1 className="text-2xl text-center font-bold mb-4">Fill More Details </h1>
-            
+            {successMessage && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    <span className="block sm:inline">{successMessage}</span>
+                </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                     <label htmlFor="UserInfo">User Category:</label>
@@ -179,7 +185,7 @@ export const MoreDetails = () => {
                     Submit
                 </Button>
             </form>
-            <Link to={`updatedetails/${newformData.userId}`} className='text-xs text-cyan-600 hover:underline'>
+            <Link to={`/viewDetails/${newformData.userId}`} className='text-xs text-cyan-600 hover:underline'>
             <Button
                     type='submit'
                     gradientDuoTone='purpleToBlue'

@@ -69,23 +69,6 @@ export default function DashSidebar() {
           )}
           {currentUser && (
             <>
-             <Link to={`viewdetails/${currentUser._id}`}>
-                <Sidebar.Item
-                  icon={HiOutlineUserGroup}
-                  as='div'
-                >
-                  More Details
-                </Sidebar.Item>
-              </Link>
-              {/* <Link to='/dashboard?tab=users'>
-                <Sidebar.Item
-                  active={tab === 'users'}
-                  icon={HiOutlineUserGroup}
-                  as='div'
-                >
-                  Users
-                </Sidebar.Item>
-              </Link> */}
               <Link to='/dashboard?tab=comments'>
                 <Sidebar.Item
                   active={tab === 'comments'}

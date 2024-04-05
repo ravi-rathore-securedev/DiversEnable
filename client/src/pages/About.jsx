@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div className=' sm:flex sm:flex-row-reverse mt-20 px-2 justify-evenly mb-10'>
 
-    <img className='rounded sm:w-2/5 w-full m-auto mr-5' src='https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600' alt='about image'/>
+    <img className='rounded sm:w-2/5 w-full m-auto mr-10' src='https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600' alt='about image'/>
  
 
   <div >

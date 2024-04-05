@@ -123,19 +123,6 @@ export default function Search() {
               <option value='asc'>Oldest</option>
             </Select>
           </div>
-          {/* <div className='flex items-center gap-2'>
-            <label className='font-semibold'>Category:</label>
-            <Select
-              onChange={handleChange}
-              value={sidebarData.category}
-              id='category'
-            >
-              <option value='uncategorized'>Uncategorized</option>
-              <option value='reactjs'>React.js</option>
-              <option value='nextjs'>Next.js</option>
-              <option value='javascript'>JavaScript</option>
-            </Select>
-          </div> */}
           <Button type='submit' outline gradientDuoTone='purpleToPink'>
             Apply Filters
           </Button>

@@ -32,7 +32,7 @@ export default function Home() {
 
   <div className='w-full sm:w-1/2 flex justify-center'>
 
-    <img className='w-full  my-2' src='https://images.pexels.com/photos/6248989/pexels-photo-6248989.jpeg?auto=compress&cs=tinysrgb&w=600' alt='fullscroll'/>
+    <img className='w-full  my-2 ' src='https://images.pexels.com/photos/6248989/pexels-photo-6248989.jpeg?auto=compress&cs=tinysrgb&w=600' alt='fullscroll'/>
 
   </div>
 
@@ -92,7 +92,7 @@ export default function Home() {
 
 <div className=' sm:flex sm:flex-row-reverse mt-20 px-2 justify-evenly'>
 
-      <img className='rounded sm:w-2/5 w-full m-auto' src='https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600' alt='about image'/>
+      <img className='rounded sm:w-2/5 w-full m-auto mr-10' src='https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600' alt='about image'/>
    
 
     <div >
@@ -111,12 +111,12 @@ export default function Home() {
 
 
 
-<div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
+<div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7 '>
         {posts && posts.length > 0 && (
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-6 '>
             <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
-            <div className='flex flex-wrap gap-4'>
-              {posts.slice(0, 3).map((post) => (
+            <div className='flex flex-wrap gap-4 justify-evenly'>
+              {posts.slice(0, 2).map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
             </div>
@@ -173,10 +173,7 @@ export default function Home() {
     <img src='https://images.pexels.com/photos/2026764/pexels-photo-2026764.jpeg?auto=compress&cs=tinysrgb&w=600' alt='community image'/>
     <img className='w-full' src='https://images.pexels.com/photos/4064418/pexels-photo-4064418.jpeg?auto=compress&cs=tinysrgb&w=300' alt='community image'/>
     <img src='https://images.pexels.com/photos/3009792/pexels-photo-3009792.jpeg?auto=compress&cs=tinysrgb&w=600' alt='community image'/>
-    {/* <img className='sm:block hidden' src='https://images.pexels.com/photos/3912992/pexels-photo-3912992.jpeg?auto=compress&cs=tinysrgb&w=600'  alt='community image'/>
-    <img className=' sm:block hidden' src='https://images.pexels.com/photos/4064696/pexels-photo-4064696.jpeg?auto=compress&cs=tinysrgb&w=600' alt='community image'/>
-    <img className='sm:block hidden' src='https://images.pexels.com/photos/4063733/pexels-photo-4063733.jpeg?auto=compress&cs=tinysrgb&w=600' alt='community image'/> */}
-  </div>
+   </div>
 </div>
     </div>
     
