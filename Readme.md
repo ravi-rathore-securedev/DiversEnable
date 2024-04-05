@@ -18,6 +18,10 @@ Welcome to DiverseEnable - an inclusive online platform designed to empower dive
 - **Peer Support:** Engage with fellow community members through our forum, where users can seek advice, share experiences, and offer support in a safe and inclusive space.
 - **Topic-based Discussions:** Participate in discussions covering a wide range of topics relevant to the disabled community, including accessibility, advocacy, and personal experiences.
 - **Expert Q&A Sessions:** Benefit from periodic sessions with experts in various fields, providing valuable insights and opportunities for questions.
+### Screenshots
+![Screenshot (65)](https://github.com/ravi-rathore-securedev/DiversEnable/assets/115914121/e3b96887-1646-436f-b5de-659fa728527e)
+![Screenshot (66)](https://github.com/ravi-rathore-securedev/DiversEnable/assets/115914121/cf2951bf-6d8d-4dbc-a6f3-f2001bc7bbdc)
+
 
 ## Getting Started
 
@@ -33,7 +37,7 @@ Welcome to DiverseEnable - an inclusive online platform designed to empower dive
    - Create a Firebase project and enable Google authentication.
    - Obtain Firebase configuration credentials.
    - Replace the Firebase configuration in the project's Firebase config file.
-5. Start the development server: `npm start`
+5. Start the development server: `npm run dev`
 6. Access the application in your browser at `http://localhost:3000`.
 
 ## Contributing
