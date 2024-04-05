@@ -10,7 +10,7 @@ import jobRoutes from './routes/job.route.js';
 import schemeRoutes from './routes/govt.route.js';
 import scholarRoutes from './routes/scholarship.route.js';
 import detailRoutes from './routes/MoreDetails.route.js'
-
+import cors from 'cors'
 import cookieParser from 'cookie-parser';
 import path from 'path';
 
@@ -35,6 +35,11 @@ app.use(cookieParser());
 app.listen(3000, () => {
   console.log('Server is running on port 3000!');
 });
+
+app.use(cors({
+  origin: '*' ,
+  credentials:true
+}) )
 
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
