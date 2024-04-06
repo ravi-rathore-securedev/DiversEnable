@@ -124,14 +124,14 @@ export default function Header() {
           <Link to='/projects'>Projects</Link>
         </Navbar.Link> */}
         <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to='/search' className=' text-xl text-white hover:text-cyan-200'>Explore</Link>
+          <Link to='/search' className=' text-xl hover:text-cyan-200'>Explore</Link>
         </Navbar.Link>
         <div className='text-xl'>
         <Dropdown
           arrowIcon={false}
           label='Opportunity'
           inline
-          className='sm:inline w-44 p-3 text-white hover:text-cyan-200'
+          className='sm:inline w-44 p-3 hover:text-cyan-200'
         >
           <Link to='/joblist'>
             <Dropdown.Item>Job/Internships</Dropdown.Item>
