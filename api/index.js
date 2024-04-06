@@ -13,6 +13,7 @@ import detailRoutes from './routes/MoreDetails.route.js'
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -25,7 +26,8 @@ mongoose
     console.log("Error while connecting",err);
   });
 
-const __dirname = path.resolve();
+  const __filename=fileURLToPath(import.meta.url)
+  const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -50,10 +52,11 @@ app.use('/api/scheme',schemeRoutes)
 app.use('/api/scholar',scholarRoutes)
 app.use('/api/details',detailRoutes)
 
+console.log(__dirname)
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 app.use((err, req, res, next) => {
