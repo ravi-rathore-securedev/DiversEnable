@@ -16,6 +16,7 @@ export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
   const [searchTerm, setSearchTerm] = useState('');
+  const isMobile = window.innerWidth <= 768; // assuming 768px is the breakpoint for mobile
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -55,35 +56,34 @@ export default function Header() {
         to='/'
         className='flex self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
       >
-        <span className=' py-1 rounded-lg px-1'>
-      <img src={Headlogo} alt='logo' className='sm:block hidden w-12 h-12 rounded-full ' />
+        <span className='py-1 rounded-lg px-1'>
+          <img src={Headlogo} alt='logo' className='sm:block hidden w-12 h-12 rounded-full ' />
         </span>
-        <h2 className='py-3 text-base te sm:text-2xl text-indigo-500 font-bold'>
-  Diverse Enable
-</h2>
+        <h2 className='py-3 text-xl te sm:text-2xl text-indigo-500 font-bold'>
+          Diverse Enable
+        </h2>
       </Link>
-      <form onSubmit={handleSubmit}>
-        <TextInput
-          type='text'
-          placeholder='Search...'
-          rightIcon={AiOutlineSearch}
-          className='hidden lg:inline'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </form>
-      <Button className='w-12 h-10 sm:hidden' color='gray' pill>
-        <AiOutlineSearch />
+      {!isMobile && (
+        <form onSubmit={handleSubmit}>
+          <TextInput
+            type='text'
+            placeholder='Search...'
+            rightIcon={AiOutlineSearch}
+            className='hidden lg:inline'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </form>
+      )}
+      <Button
+        className='w-12 h-10'
+        color='gray'
+        pill
+        onClick={() => dispatch(toggleTheme())}
+      >
+        {theme === 'light' ? <FaSun /> : <FaMoon />}
       </Button>
       <div className='flex gap-2 md:order-2'>
-        <Button
-          className='w-12 h-10 hidden sm:inline'
-          color='gray'
-          pill
-          onClick={() => dispatch(toggleTheme())}
-        >
-          {theme === 'light' ? <FaSun /> : <FaMoon />}
-        </Button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -113,36 +113,39 @@ export default function Header() {
         )}
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse >
+      <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to='/' className=' text-xl hover:text-cyan-200'>Home</Link>
+          <Link to='/' className=' text-xl hover:text-cyan-200'>
+            Home
+          </Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/about'} as={'div'}>
-          <Link to='/about' className=' text-xl  hover:text-cyan-200'>About</Link>
+          <Link to='/about' className=' text-xl  hover:text-cyan-200'>
+            About
+          </Link>
         </Navbar.Link>
-        {/* <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to='/projects'>Projects</Link>
-        </Navbar.Link> */}
         <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to='/search' className=' text-xl hover:text-cyan-200'>Explore</Link>
+          <Link to='/search' className=' text-xl hover:text-cyan-200'>
+            Explore
+          </Link>
         </Navbar.Link>
         <div className='text-xl'>
-        <Dropdown
-          arrowIcon={false}
-          label='Opportunity'
-          inline
-          className='sm:inline w-44 p-3 hover:text-cyan-200'
-        >
-          <Link to='/joblist'>
-            <Dropdown.Item>Job/Internships</Dropdown.Item>
-          </Link>
-          <Link to='/schemelist'>
-            <Dropdown.Item>Govt Schemes</Dropdown.Item>
-          </Link>
-          <Link to='/scholarlist'>
-            <Dropdown.Item>Scholarships</Dropdown.Item>
-          </Link>
-        </Dropdown>
+          <Dropdown
+            arrowIcon={false}
+            label='Opportunity'
+            inline
+            className='sm:inline w-44 p-3 hover:text-cyan-200'
+          >
+            <Link to='/joblist'>
+              <Dropdown.Item>Job/Internships</Dropdown.Item>
+            </Link>
+            <Link to='/schemelist'>
+              <Dropdown.Item>Govt Schemes</Dropdown.Item>
+            </Link>
+            <Link to='/scholarlist'>
+              <Dropdown.Item>Scholarships</Dropdown.Item>
+            </Link>
+          </Dropdown>
         </div>
       </Navbar.Collapse>
     </Navbar>
