@@ -115,7 +115,7 @@ export default function Header() {
       </div>
       <Navbar.Collapse >
         <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to='/' className=' text-xl hover:text-cyan-200'>Home</Link>
+          <Link to='/' className=' text-xl hover:text-cyan-200'>Home time</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/about'} as={'div'}>
           <Link to='/about' className=' text-xl  hover:text-cyan-200'>About</Link>
