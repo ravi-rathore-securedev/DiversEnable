@@ -131,10 +131,9 @@ export default function Header() {
         </Navbar.Link>
         <div className='text-xl'>
           <Dropdown
-            arrowIcon={false}
-            label='Opportunity'
-            inline
-            className='sm:inline w-44 p-3 hover:text-cyan-200'
+            label=' Opportunity'
+            inline 
+            className='sm:inline w-44 p-5 hover:text-cyan-200'
           >
             <Link to='/joblist'>
               <Dropdown.Item>Job/Internships</Dropdown.Item>

@@ -62,13 +62,13 @@ export default function Home() {
 
 <Link to={'/search'}>
 <div className='border-sky-700 border-2 w-4/6 m-auto py-1 px-5 rounded-2xl my-8 transform hover:scale-105 transition duration-500'>
-  <h1 className=' text-3xl font-semibold'>Explore</h1>
+  <h1 className='  text-2xl sm:text-3xl font-semibold'>Explore</h1>
   <p className=' text-sm font-thin'>Explore Post of Individuals</p>
 </div>
 </Link>
 <Link to={'/joblist'}>
 <div className='border-sky-700 border-2 w-4/6 m-auto py-1 px-5 rounded-2xl my-8 transform hover:scale-105 transition duration-500'>
-  <h1 className=' text-3xl font-semibold'>Jobs/Internships</h1>
+  <h1 className=' text-xl sm:twxt-3xl font-semibold'>Jobs/Internships</h1>
   <p className=' text-sm font-thin'>Opportunities related to Jobs, Internships </p>
 </div>
 </Link>
@@ -76,14 +76,14 @@ export default function Home() {
 
 <Link to={'/schemelist'}>
 <div className='border-sky-700 border-2 w-4/6 m-auto  py-1 px-5  rounded-2xl my-8 transform hover:scale-105 transition duration-500'>
-<h1 className=' text-3xl font-semibold'>Government Schemes </h1>
+<h1 className=' text-2xl sm:text-3xl font-semibold'>Government Schemes </h1>
   <p className=' text-sm font-thin'>Government Schemes for Specially Abled</p>
 </div>  
 </Link>
 
 <Link to={'/scholarlist'}>
 <div className='border-sky-700 border-2 w-4/6 m-auto  py-1 px-5  rounded-2xl transform hover:scale-105 transition duration-500'>
-<h1 className=' text-3xl font-semibold'>Scholarship Opportunities</h1>
+<h1 className='  text-xl sm:text-3xl font-semibold'>Scholarship Opportunities</h1>
   <p className=' text-sm font-thin'>Scholarship Related information opportunities for Specially Abled Students</p>
 </div>
 </Link>
